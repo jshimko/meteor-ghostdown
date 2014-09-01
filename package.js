@@ -1,7 +1,7 @@
 Package.describe({
      name: "jeremy:ghostdown",
      summary: "A split-pane Markdown editor by the fine folks at Ghost.org",
-     version: '0.1.2',
+     version: '0.1.3',
      git: 'https://github.com/jshimko/meteor-ghostdown.git'
 });
 
@@ -10,7 +10,8 @@ Package.onUse(function (api) {
     api.versionsFrom("METEOR@0.9.0");
 
     api.use([
-        'jquery'
+        'jquery',
+        'templating'
         ], 'client');
 
     api.addFiles([
