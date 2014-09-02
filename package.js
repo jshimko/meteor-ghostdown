@@ -11,7 +11,7 @@ Package.onUse(function (api) {
 
     api.use([
         'jquery',
-        'templating'
+        'templating',
         'ui'
         ], 'client');
 
