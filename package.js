@@ -1,7 +1,7 @@
 Package.describe({
      name: "jeremy:ghostdown",
      summary: "A split-pane Markdown editor by the fine folks at Ghost.org",
-     version: '0.1.3',
+     version: '0.1.4',
      git: 'https://github.com/jshimko/meteor-ghostdown.git'
 });
 
@@ -12,12 +12,11 @@ Package.onUse(function (api) {
     api.use([
         'jquery',
         'templating'
+        'ui'
         ], 'client');
 
     api.addFiles([
-        'ghost-markdown-editor/ghostdown.css',
-        'ghost-markdown-editor/ghostdown.js',
-        'ghost-markdown-editor/jquery.ghostdown.js',
+        'ghost-markdown-editor/ghostdown.js'
         ], 'client');
 
     if (api.export)
