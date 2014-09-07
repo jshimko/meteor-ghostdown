@@ -15,6 +15,9 @@ Package.onUse(function (api) {
         ], 'client');
 
     api.addFiles([
+        'lib/client/vendor/codemirror.js',
+        'lib/client/vendor/showdown.js',
+        'lib/client/codemirror-markdown.js',
         'lib/client/ghostdown.html',
         'lib/client/ghostdown.js'
         ], 'client');
