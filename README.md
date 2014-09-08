@@ -3,6 +3,8 @@
 
 All credit for the development of the editor functionality goes to the fine folks at [Ghost.org](http://ghost.org) and a few other great open source projects (like [CodeMirror](http://codemirror.net) and [Showdown](https://github.com/coreyti/showdown)).
 
+Live demo:  http://ghostdown.meteor.com  ([source](https://github.com/jshimko/meteor-ghostdown-demo))
+
 ## Install
 
 `meteor add jeremy:ghostdown`
@@ -42,10 +44,10 @@ That will give you the following template:
 ```
 
 
-Click in the markdown pane and start typing.  You should see the magic begin to happen immediately.  Now all you have to do is write some CSS to make it beautiful!  It's up to you to style the editor and code up whatever logic you want to happen with the Markdown content, but the live preview, synchronized scrolling, and word count functionality works right out of the box.
+See [the demo](http://ghostdown.meteor.com).  Click in the markdown pane and start typing.  You should see the magic begin to happen immediately.  Note that this package is completely unstyled.  All styling is added in the demo app ([see source](https://github.com/jshimko/meteor-ghostdown-demo)).  It's up to you to style the editor and code up whatever logic you want to happen with the Markdown content. However, the live preview, synchronized scrolling, and word count functionality works right out of the box just by adding the package to your app and importing the template.
 
 If you're fond of the Ghost platform back-end UI, I highly recommend poking around in the main Ghost repo for some [templates](https://github.com/TryGhost/Ghost/tree/master/core/client/templates) and the Ghost-UI repo for the associated [styles](https://github.com/TryGhost/Ghost-UI/tree/master/sass).  It's a great way to build a nice looking modular UI without writing everything from scratch.  Hooray open source!
 
 ## Future
 
-I may eventually add more functionality or some default styles, but the current state satisfies what I needed for my project.  Contributions are welcome though!
+I may eventually add more functionality or some default styles to this package, but the current state satisfies what I needed for my project.  Contributions are welcome though!
