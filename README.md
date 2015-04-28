@@ -43,6 +43,15 @@ That will give you the following template:
 </template>
 ```
 
+You can then reactively get the values for the markdown, HTML, and word count with the following session variables.
+
+```javascript
+Session.get('editor-markdown');
+Session.get('editor-html');
+Session.get('editor-word-count'); 
+```
+
+## Demo
 
 See [the demo](http://ghostdown.meteor.com).  Click in the markdown pane and start typing.  You should see the magic begin to happen immediately.  Note that this package is completely unstyled.  All styling is added in the demo app ([see source](https://github.com/jshimko/meteor-ghostdown-demo)).  It's up to you to style the editor and code up whatever logic you want to happen with the Markdown content. However, the live preview, synchronized scrolling, and word count functionality works right out of the box just by adding the package to your app and importing the template.
 
