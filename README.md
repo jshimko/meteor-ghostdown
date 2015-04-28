@@ -19,28 +19,31 @@ That will give you the following template:
 
 ```html
 <template name="GhostEditor">
-    
-    <!-- Markdown Pane -->
-    <section class="entry-markdown active">
-        <header class="floatingheader" id="entry-markdown-header">
-            <small>Markdown</small>
-        </header>
-        <section id="entry-markdown-content" class="entry-markdown-content">
-            <textarea id="entry-markdown"></textarea>
-        </section>
+
+  <!-- Markdown Pane -->
+  <section class="entry-markdown active">
+    <header class="floatingheader" id="entry-markdown-header">
+      <small>Markdown</small>
+    </header>
+    <section id="entry-markdown-content" class="entry-markdown-content">
+      <textarea id="entry-markdown"></textarea>
     </section>
-    
-    <!-- Rendered HTML Pane -->
-    <section class="entry-preview">
-        <header class="floatingheader" id="entry-preview-header">
-            <small>Preview <span class="entry-word-count js-entry-word-count">Word count</span></small>
-        </header>
-        <section class="entry-preview-content">
-            <div class="rendered-markdown"></div>
-        </section>
+  </section>
+
+  <!-- Rendered HTML Pane -->
+  <section class="entry-preview">
+    <header class="floatingheader" id="entry-preview-header">
+      <small>Preview
+        <span class="entry-word-count js-entry-word-count">Word count</span>
+      </small>
+    </header>
+    <section class="entry-preview-content">
+      <div class="rendered-markdown"></div>
     </section>
+  </section>
 
 </template>
+
 ```
 
 You can then reactively get the values for the markdown, HTML, and word count with the following session variables.
