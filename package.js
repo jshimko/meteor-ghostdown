@@ -19,7 +19,9 @@ Package.onUse(function(api) {
     'lib/client/vendor/showdown.js',
     'lib/client/codemirror-markdown.js',
     'lib/client/ghostdown.html',
-    'lib/client/ghostdown.js'
+    'lib/client/ghostdown.js',
+    'lib/client/ghostdown.css',
+    'lib/client/editor.css'
   ], 'client');
 
 });
