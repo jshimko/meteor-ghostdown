@@ -1,8 +1,8 @@
 Package.describe({
-  name: "jeremy:ghostdown",
+  name: "patte:ghostdown",
   summary: "A split-pane Markdown editor by the fine folks at Ghost.org",
-  version: '0.4.3',
-  git: 'https://github.com/jshimko/meteor-ghostdown.git'
+  version: '0.5.0',
+  git: 'https://github.com/patte/meteor-ghostdown.git'
 });
 
 Package.onUse(function(api) {
