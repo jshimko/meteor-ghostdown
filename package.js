@@ -1,8 +1,8 @@
 Package.describe({
-  name: "jeremy:ghostdown",
+  name: "patte:ghostdown",
   summary: "A split-pane Markdown editor by the fine folks at Ghost.org",
-  version: '0.4.3',
-  git: 'https://github.com/jshimko/meteor-ghostdown.git'
+  version: '0.5.2',
+  git: 'https://github.com/patte/meteor-ghostdown.git'
 });
 
 Package.onUse(function(api) {
@@ -19,7 +19,9 @@ Package.onUse(function(api) {
     'lib/client/vendor/showdown.js',
     'lib/client/codemirror-markdown.js',
     'lib/client/ghostdown.html',
-    'lib/client/ghostdown.js'
+    'lib/client/ghostdown.js',
+    'lib/client/ghostdown.css',
+    'lib/client/editor.css'
   ], 'client');
 
 });

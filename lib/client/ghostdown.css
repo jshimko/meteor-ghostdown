@@ -1,0 +1,737 @@
+/* this is a minimalized version of compiled screen.css from
+ https://github.com/JohnONolan/Ghost-UI/blob/master/sass/screen.scss
+ changes: mutated main element styles to editor-main class
+
+ HTML structure to make this less apply:
+  <div class="editor-container">
+    <div class="editor-main editor">
+      <div class="entry-container">
+        {{> GhostEditor}}
+      </div>
+    </div>
+  </div>
+
+ define this in your site-style.less
+  .editor-container {
+    position: relative;
+    min-height: 600px;
+  }
+ github: @patte
+*/
+
+
+.CodeMirror {
+	font-family: monospace;
+	height: 300px
+}
+.CodeMirror-scroll {
+	overflow: auto
+}
+.CodeMirror-lines {
+	padding: 4px 0
+}
+.CodeMirror pre {
+	padding: 0 4px
+}
+.CodeMirror-scrollbar-filler {
+	background-color: white
+}
+.CodeMirror-gutters {
+	border-right: 1px solid #ddd;
+	background-color: #f7f7f7
+}
+.CodeMirror-linenumber {
+	padding: 0 3px 0 5px;
+	min-width: 20px;
+	text-align: right;
+	color: #999
+}
+.CodeMirror div.CodeMirror-cursor {
+	border-left: 1px solid black
+}
+.CodeMirror div.CodeMirror-secondarycursor {
+	border-left: 1px solid silver
+}
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
+	width: auto;
+	border: 0;
+	background: transparent;
+	background: rgba(0,200,0,0.4);
+}
+.cm-s-default .cm-keyword {
+	color: #708
+}
+.cm-s-default .cm-atom {
+	color: #219
+}
+.cm-s-default .cm-number {
+	color: #164
+}
+.cm-s-default .cm-def {
+	color: #00f
+}
+.cm-s-default .cm-variable {
+	color: black
+}
+.cm-s-default .cm-variable-2 {
+	color: #05a
+}
+.cm-s-default .cm-variable-3 {
+	color: #085
+}
+.cm-s-default .cm-property {
+	color: black
+}
+.cm-s-default .cm-operator {
+	color: black
+}
+.cm-s-default .cm-comment {
+	color: #a50
+}
+.cm-s-default .cm-string {
+	color: #a11
+}
+.cm-s-default .cm-string-2 {
+	color: #f50
+}
+.cm-s-default .cm-meta {
+	color: #555
+}
+.cm-s-default .cm-error {
+	color: #f00
+}
+.cm-s-default .cm-qualifier {
+	color: #555
+}
+.cm-s-default .cm-builtin {
+	color: #30a
+}
+.cm-s-default .cm-bracket {
+	color: #997
+}
+.cm-s-default .cm-tag {
+	color: #170
+}
+.cm-s-default .cm-attribute {
+	color: #00c
+}
+.cm-s-default .cm-header {
+	color: blue
+}
+.cm-s-default .cm-quote {
+	color: #090
+}
+.cm-s-default .cm-hr {
+	color: #999
+}
+.cm-s-default .cm-link {
+	color: #00c
+}
+.cm-negative {
+	color: #d44
+}
+.cm-positive {
+	color: #292
+}
+.cm-header, .cm-strong {
+	font-weight: bold
+}
+.cm-em {
+	font-style: italic
+}
+.cm-emstrong {
+	font-style: italic;
+	font-weight: bold
+}
+.cm-link {
+	text-decoration: underline
+}
+.cm-invalidchar {
+	color: #f00
+}
+div.CodeMirror span.CodeMirror-matchingbracket {
+	color: #0f0
+}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+	color: #f22
+}
+.CodeMirror {
+	line-height: 1;
+	position: relative;
+	overflow: hidden
+}
+.CodeMirror-scroll {
+	margin-bottom: -30px;
+	margin-right: -30px;
+	padding-bottom: 30px;
+	padding-right: 30px;
+	height: 100%;
+	outline: none;
+	position: relative
+}
+.CodeMirror-sizer {
+	position: relative
+}
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler {
+	position: absolute;
+	z-index: 6;
+	display: none
+}
+.CodeMirror-vscrollbar {
+	right: 0;
+	top: 0;
+	overflow-x: hidden;
+	overflow-y: scroll
+}
+.CodeMirror-hscrollbar {
+	bottom: 0;
+	left: 0;
+	overflow-y: hidden;
+	overflow-x: scroll
+}
+.CodeMirror-scrollbar-filler {
+	right: 0;
+	bottom: 0;
+	z-index: 6
+}
+.CodeMirror-gutters {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	padding-bottom: 30px;
+	z-index: 3
+}
+.CodeMirror-gutter {
+	height: 100%;
+	display: inline-block;
+*zoom:1;
+*display:inline
+}
+.CodeMirror-gutter-elt {
+	position: absolute;
+	cursor: default;
+	z-index: 4
+}
+.CodeMirror-lines {
+	cursor: text
+}
+.CodeMirror pre {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	border-width: 0;
+	background: transparent;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	white-space: pre;
+	word-wrap: normal;
+	line-height: inherit;
+	color: inherit;
+	z-index: 2;
+	position: relative;
+	overflow: visible
+}
+.CodeMirror-wrap pre {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	word-break: normal
+}
+.CodeMirror-linebackground {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 0
+}
+.CodeMirror-linewidget {
+	position: relative;
+	z-index: 2;
+	overflow: auto
+}
+.CodeMirror-widget {
+	display: inline-block
+}
+.CodeMirror-wrap .CodeMirror-scroll {
+	overflow-x: hidden
+}
+.CodeMirror-measure {
+	position: absolute;
+	width: 100%;
+	height: 0px;
+	overflow: hidden;
+	visibility: hidden
+}
+.CodeMirror-measure pre {
+	position: static
+}
+.CodeMirror div.CodeMirror-cursor {
+	position: absolute;
+	visibility: hidden;
+	border-right: none;
+	width: 0
+}
+.CodeMirror-focused div.CodeMirror-cursor {
+	visibility: visible
+}
+.CodeMirror-selected {
+	background: #d9d9d9
+}
+.CodeMirror-focused .CodeMirror-selected {
+	background: #d7d4f0
+}
+.cm-searching {
+	background: #ffa;
+	background: rgba(255,255,0,0.4)
+}
+.CodeMirror span {
+*vertical-align:text-bottom
+}
+@media print {
+.CodeMirror div.CodeMirror-cursor {
+	visibility: hidden
+}
+}
+
+/* ==========================================================================
+   Main
+   ---
+   Make t/r/b/l values variables where needed
+   ========================================================================== */
+/* line 108, ../scss/modules/_layout.scss */
+.editor-main {
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 0;
+  left: 15px;
+  padding: 0;
+}
+@media (max-width: 400px) {
+  /* line 108, ../scss/modules/_layout.scss */
+  .editor-main {
+    top: 40px;
+    left: 0;
+    right: 0;
+  }
+}
+
+/*
+ * Editor screen styles
+ *
+ * Table of Contents
+ *
+ * Editor
+ * Post Preview Content
+ * Full Screen Mode
+ * Publish Bar
+ * Markdown Help Modal
+ * CodeMirror
+ */
+/* ==========================================================================
+   Editor
+   ========================================================================== */
+/* line 20, ../scss/layouts/_editor.scss */
+.entry-container .entry-title {
+  height: 57px;
+  padding: 2px 15px;
+  margin-bottom: 5px;
+  position: relative;
+}
+@media (max-width: 400px) {
+  /* line 20, ../scss/layouts/_editor.scss */
+  .entry-container .entry-title {
+    box-shadow: none;
+  }
+}
+/* line 31, ../scss/layouts/_editor.scss */
+.entry-container .entry-title input {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  width: 100%;
+  background: transparent;
+}
+/* line 40, ../scss/layouts/_editor.scss */
+.entry-container .entry-title input:focus {
+  outline: 0;
+}
+
+@media (min-width: 401px) {
+  /* line 48, ../scss/layouts/_editor.scss */
+  .editor .notifications.bottom {
+    margin-bottom: 40px;
+  }
+}
+/* line 54, ../scss/layouts/_editor.scss */
+.editor .entry-container {
+  position: relative;
+  height: 100%;
+}
+/* line 60, ../scss/layouts/_editor.scss */
+.editor .entry-markdown {
+  left: 0;
+  border-right: #edece4 2px solid;
+}
+/* line 61, ../scss/layouts/_editor.scss */
+.editor .entry-preview {
+  right: 0;
+  border-left: #edece4 2px solid;
+}
+/* line 64, ../scss/layouts/_editor.scss */
+.editor .entry-markdown,
+.editor .entry-preview {
+  width: 50%;
+  padding: 15px;
+  position: absolute;
+  bottom: 40px;
+  top: 61px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 5px;
+}
+@media (max-width: 400px) {
+  /* line 64, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown,
+  .editor .entry-preview {
+    box-shadow: none;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 64, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown,
+  .editor .entry-preview {
+    top: 109px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border: none;
+    z-index: 100;
+    min-height: 380px;
+  }
+  /* line 87, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown .markdown, .editor .entry-markdown .entry-preview-content,
+  .editor .entry-preview .markdown,
+  .editor .entry-preview .entry-preview-content {
+    height: 50px;
+    overflow: hidden;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 93, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown .floatingheader,
+  .editor .entry-preview .floatingheader {
+    cursor: pointer;
+    width: 50%;
+    border-right: #edece4 2px solid;
+    color: #fff;
+    font-weight: normal;
+    background: #aaa9a2;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 -2px 3px inset;
+  }
+  /* line 109, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown .floatingheader a,
+  .editor .entry-preview .floatingheader a {
+    color: #fff;
+  }
+}
+/* line 114, ../scss/layouts/_editor.scss */
+.editor .entry-markdown .floatingheader a,
+.editor .entry-preview .floatingheader a {
+  color: #aaa9a2;
+}
+/* line 118, ../scss/layouts/_editor.scss */
+.editor .entry-markdown .floatingheader .entry-word-count,
+.editor .entry-preview .floatingheader .entry-word-count {
+  float: right;
+  position: relative;
+  top: 2px;
+}
+@media (max-width: 1000px) {
+  /* line 129, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown:not(.active) .markdown-help:hover:before,
+  .editor .entry-preview:not(.active) .markdown-help:hover:before {
+    color: #fff;
+  }
+}
+/* line 137, ../scss/layouts/_editor.scss */
+.editor .entry-markdown.active,
+.editor .entry-preview.active {
+  z-index: 200;
+}
+/* line 142, ../scss/layouts/_editor.scss */
+.editor .entry-markdown.active .markdown, .editor .entry-markdown.active .entry-preview-content,
+.editor .entry-preview.active .markdown,
+.editor .entry-preview.active .entry-preview-content {
+  height: auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 1000px) {
+  /* line 150, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown.active header,
+  .editor .entry-preview.active header {
+    cursor: auto;
+    color: #aaa9a2;
+    background: #fff;
+    box-shadow: none;
+  }
+  /* line 156, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown.active header a,
+  .editor .entry-preview.active header a {
+    color: #aaa9a2;
+  }
+}
+@media (max-width: 400px) {
+  /* line 164, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown .markdown-help,
+  .editor .entry-markdown .entry-word-count,
+  .editor .entry-preview .markdown-help,
+  .editor .entry-preview .entry-word-count {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 174, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown .entry-markdown-content,
+  .editor .entry-preview .entry-preview-content {
+    display: none;
+  }
+  /* line 178, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown.active .entry-markdown-content,
+  .editor .entry-preview.active .entry-preview-content {
+    display: block;
+  }
+}
+/* line 187, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content textarea {
+  border: 0;
+  width: 100%;
+  min-height: auto;
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px 20px 50px 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 600px) {
+  /* line 187, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown-content textarea {
+    padding: 10px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1000px) {
+  /* line 187, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown-content textarea {
+    padding: 15px;
+  }
+}
+@media (min-width: 1001px) {
+  /* line 187, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown-content textarea {
+    top: 40px;
+  }
+}
+@media (max-height: 560px) {
+  /* line 187, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown-content textarea {
+    height: calc(100% - 40px);
+  }
+}
+/* line 215, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content textarea:focus {
+  outline: 0;
+}
+/* line 220, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content .CodeMirror {
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: Inconsolata, monospace;
+  font-size: 1.1em; /* changed by patte */
+  line-height: 1.2em; /* changed by patte */
+  color: #3c4043;
+}
+/* line 232, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content .CodeMirror .CodeMirror-focused,
+.editor .entry-markdown-content .CodeMirror .CodeMirror-selected {
+  color: #242628;
+  background: #b3d5f3;
+  text-shadow: none;
+}
+/* line 239, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content .CodeMirror ::selection {
+  color: #242628;
+  background: #b3d5f3;
+  text-shadow: none;
+}
+/* line 246, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content .CodeMirror-lines {
+  padding: 65px 0 40px 0;
+  /* Vertical padding around content */
+}
+@media (max-width: 1000px) {
+  /* line 246, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown-content .CodeMirror-lines {
+    padding-top: 25px;
+  }
+}
+@media (max-width: 400px) {
+  /* line 246, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown-content .CodeMirror-lines {
+    padding: 15px 0;
+  }
+}
+/* line 251, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content .CodeMirror pre {
+  padding: 0 40px;
+  /* Horizontal padding of content */
+}
+@media (max-width: 400px) {
+  /* line 251, ../scss/layouts/_editor.scss */
+  .editor .entry-markdown-content .CodeMirror pre {
+    padding: 0 15px;
+  }
+}
+/* line 256, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content .cm-header {
+  color: #000;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  font-weight: bold;
+}
+/* line 263, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content .cm-variable-2,
+.editor .entry-markdown-content .cm-variable-3,
+.editor .entry-markdown-content .cm-keyword {
+  color: #3c4043;
+}
+/* line 269, ../scss/layouts/_editor.scss */
+.editor .entry-markdown-content .cm-string,
+.editor .entry-markdown-content .cm-strong,
+.editor .entry-markdown-content .cm-link,
+.editor .entry-markdown-content .cm-comment,
+.editor .entry-markdown-content .cm-quote,
+.editor .entry-markdown-content .cm-number,
+.editor .entry-markdown-content .cm-atom,
+.editor .entry-markdown-content .cm-tag {
+  color: #000;
+  font-weight: bold;
+}
+@media (max-width: 1000px) {
+  /* line 285, ../scss/layouts/_editor.scss */
+  .editor .entry-preview .floatingheader {
+    right: 0;
+    left: auto;
+    border-right: none;
+    border-left: #edece4 2px solid;
+  }
+}
+/* line 294, ../scss/layouts/_editor.scss */
+.editor .entry-preview .entry-preview-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 60px 40px 40px 40px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+@media (max-width: 1000px) {
+  /* line 294, ../scss/layouts/_editor.scss */
+  .editor .entry-preview .entry-preview-content {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 400px) {
+  /* line 294, ../scss/layouts/_editor.scss */
+  .editor .entry-preview .entry-preview-content {
+    padding: 15px;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 321, ../scss/layouts/_editor.scss */
+  .editor .scrolling .floatingheader {
+    box-shadow: none;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 326, ../scss/layouts/_editor.scss */
+  .editor .scrolling .floatingheader::before, .editor .scrolling .floatingheader::after {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 333, ../scss/layouts/_editor.scss */
+  .editor .scrolling .CodeMirror-scroll,
+  .editor .scrolling .entry-preview-content {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05) inset;
+  }
+}
+
+/* line 343, ../scss/layouts/_editor.scss */
+.markdown-help {
+  position: relative;
+  top: -5px;
+  right: -5px;
+  float: right;
+  padding: 5px;
+}
+/* line 38, ../scss/modules/_icons.scss */
+.markdown-help:before {
+  font-family: "GhostIcons";
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: -7%;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\f618";
+  color: #cfceca;
+}
+/* line 60, ../scss/modules/_icons.scss */
+.markdown-help:hover {
+  text-decoration: none;
+}
+/* line 38, ../scss/modules/_icons.scss */
+.markdown-help:hover:before {
+  font-family: "GhostIcons";
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: -7%;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\f618";
+  color: #aaa9a2;
+}
+/* line 60, ../scss/modules/_icons.scss */
+.markdown-help:hover:hover {
+  text-decoration: none;
+}
