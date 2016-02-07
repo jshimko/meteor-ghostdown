@@ -1,3 +1,11 @@
+# Fork
+I forked this package from [jshimko:meteor:ghostdown](https://github.com/jshimko/meteor-ghostdown) and changed the following:
+- feature: load content from template param ( {{> GhostEditor 'preload this'}} )
+- show an info icon (fontawesome :/) which links to a markdown cheatsheet
+- add editor styling from Ghost-UI css
+
+Because my PR [#12](https://github.com/jshimko/meteor-ghostdown/pull/12) was left unanswered I decided to publish the package on my own.
+
 
 # Ghostdown - A Markdown editor with live preview and word count.
 
