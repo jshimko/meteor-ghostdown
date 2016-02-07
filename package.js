@@ -1,7 +1,7 @@
 Package.describe({
   name: "patte:ghostdown",
   summary: "A split-pane Markdown editor by the fine folks at Ghost.org",
-  version: '0.5.1',
+  version: '0.5.2',
   git: 'https://github.com/patte/meteor-ghostdown.git'
 });
 
