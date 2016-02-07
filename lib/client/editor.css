@@ -1,9 +1,10 @@
+/* override this to your needs */
 .editor-container {
   position: relative;
   min-height: 600px;
 }
 
-/* override ghostdown */
+/* override of ghostdown */
 .editor-main {
   top: 0px;
 }
@@ -12,4 +13,9 @@
 .editor .entry-preview {
   top: 0px;
   box-shadow: none;
+}
+
+.editor .entry-markdown .floatingheader a {
+  position: relative;
+  z-index: 100;
 }
